@@ -6,11 +6,10 @@
     tools:context=".ui.Fragments.HomeFragment">
 
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/news_recylcerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="home is here "
-        android:textSize="65sp" />
+        android:padding="7dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

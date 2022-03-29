@@ -47,6 +47,14 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
 
+    // Retrofit
+    implementation Libs.retrofit
+    implementation Libs.retrofitCoroutinesAdapter
+    implementation Libs.gsonConverter
+
+
+
+
     //noinspection GradleDynamicVersion
     testImplementation TestLibs.junit
     androidTestImplementation TestLibs.junitExt
