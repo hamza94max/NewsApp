@@ -1,6 +1,7 @@
 import Versions.nav_version
 
 object Versions {
+
     const val KOTLIN = "1.6.10"
     const val COMPILE_SDK = 31
     const val MIN_SDK_VERSION = 16
@@ -9,10 +10,13 @@ object Versions {
     const val VERSION_NAME = "1.0"
     const val nav_version = "2.4.1"
 
+    const val GLIDE = "4.12.0"
+
+
     val RXJAVA_VERSION = "2.2.13"
     val RX_ANDROID = "2.1.1"
     val GSON_VERSION = "2.8.7"
-    val LIFE_CYCLE_VERSION = "2.2.0"
+    const val LIFE_CYCLE_VERSION = "2.2.0"
     val CONSTRAINT_LAYOUT = "2.1.3"
     const val ANDROID_GRADLE_VERSION = "7.0.4"
     val APP_COMPAT_VERSION = "1.4.1"
@@ -24,12 +28,16 @@ object Versions {
     val JUNIT_EXT_VER = "1.1.3"
     val MATERIAL_VERSION = "1.5.0"
     val MOCKITO = "3.11.2"
-    val MULTIDEX = "1.0.3"
+    val MULTIDEX = "2.0.1"
     val JACOCO = "0.16.0"
     val HILT = "2.37"
     val FRAGMENT_KTX = "1.2.5"
+
     val RX_RETROFIT_ADAPTER = "2.6.1"
     val RETROFIT_VERSION = "2.7.1"
+    const val RETROFIT_COROUTINES_ADAPTER = "0.9.2"
+
+
     val OKHTTP_LOGGING_INTERCEPTOR_VERSION = "3.12.1"
     val GSON_CONVERTER = "2.6.1"
     val ESPRESSO = "3.4.0"
@@ -74,7 +82,15 @@ object Libs {
     val hiltAndroid = "com.google.dagger:hilt-android:${Versions.HILT}"
     val hiltAndroidCompiler = "com.google.dagger:hilt-compiler:${Versions.HILT}"
     val fragmentKtx = "androidx.fragment:fragment-ktx:${Versions.FRAGMENT_KTX}"
+
     val retrofit = "com.squareup.retrofit2:retrofit:${Versions.RETROFIT_VERSION}"
+    val retrofitCoroutinesAdapter =
+        "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${Versions.RETROFIT_COROUTINES_ADAPTER}"
+
+    val glide = "com.github.bumptech.glide:glide:${Versions.GLIDE}"
+    val kaptGlide = "com.github.bumptech.glide:compiler:${Versions.GLIDE}"
+
+
     val rxAdapter = "com.squareup.retrofit2:adapter-rxjava2:${Versions.RX_RETROFIT_ADAPTER}"
     val loggingInterceptor =
         "com.squareup.okhttp3:logging-interceptor:${Versions.OKHTTP_LOGGING_INTERCEPTOR_VERSION}"
