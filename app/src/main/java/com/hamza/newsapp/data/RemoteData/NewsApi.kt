@@ -11,10 +11,10 @@ interface NewsApi {
     @GET("v2/articles")
     suspend fun getTeslaNews(
 
-        @Query("apiKey")
-        apiKey: String = API_KEY
+        @Query("sourceName")
+        sourceName: String
 
-    ): Response<NewsResponse>
+    ): NewsResponse
 
 
     @GET("v2/everything")

@@ -10,10 +10,13 @@ object Versions {
     const val VERSION_NAME = "1.0"
     const val nav_version = "2.4.1"
 
+    const val GLIDE = "4.12.0"
+
+
     val RXJAVA_VERSION = "2.2.13"
     val RX_ANDROID = "2.1.1"
     val GSON_VERSION = "2.8.7"
-    val LIFE_CYCLE_VERSION = "2.2.0"
+    const val LIFE_CYCLE_VERSION = "2.2.0"
     val CONSTRAINT_LAYOUT = "2.1.3"
     const val ANDROID_GRADLE_VERSION = "7.0.4"
     val APP_COMPAT_VERSION = "1.4.1"
@@ -25,7 +28,7 @@ object Versions {
     val JUNIT_EXT_VER = "1.1.3"
     val MATERIAL_VERSION = "1.5.0"
     val MOCKITO = "3.11.2"
-    val MULTIDEX = "1.0.3"
+    val MULTIDEX = "2.0.1"
     val JACOCO = "0.16.0"
     val HILT = "2.37"
     val FRAGMENT_KTX = "1.2.5"
@@ -83,6 +86,10 @@ object Libs {
     val retrofit = "com.squareup.retrofit2:retrofit:${Versions.RETROFIT_VERSION}"
     val retrofitCoroutinesAdapter =
         "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${Versions.RETROFIT_COROUTINES_ADAPTER}"
+
+    val glide = "com.github.bumptech.glide:glide:${Versions.GLIDE}"
+    val kaptGlide = "com.github.bumptech.glide:compiler:${Versions.GLIDE}"
+
 
     val rxAdapter = "com.squareup.retrofit2:adapter-rxjava2:${Versions.RX_RETROFIT_ADAPTER}"
     val loggingInterceptor =
