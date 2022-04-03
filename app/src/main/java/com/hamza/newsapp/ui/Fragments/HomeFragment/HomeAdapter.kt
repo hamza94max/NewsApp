@@ -1,19 +1,19 @@
 package com.hamza.newsapp.ui.Fragments.HomeFragment
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
+
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.hamza.newsapp.R
+import com.bumptech.glide.Glide
 import com.hamza.newsapp.data.Model.Article
+import com.hamza.newsapp.databinding.NewsItemBinding
 
-class HomeAdapter(private val mList: ArrayList<Article>) :
-    RecyclerView.Adapter<HomeAdapter.ViewHolder>() {
+class HomeAdapter() : RecyclerView.Adapter<HomeAdapter.NewsViewHolder>() {
 
+    inner class NewsViewHolder(val binding: NewsItemBinding) : RecyclerView.ViewHolder(binding.root)
 
     private val diffCallback = object : DiffUtil.ItemCallback<Article>() {
 
@@ -25,39 +25,29 @@ class HomeAdapter(private val mList: ArrayList<Article>) :
             return oldItem == newItem
         }
     }
-    val differ = AsyncListDiffer(this, diffCallback)
+    var differ = AsyncListDiffer(this, diffCallback)
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.news_item, parent, false)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
+        val view = NewsItemBinding
+            .inflate(LayoutInflater.from(parent.context), parent, false)
 
-        return ViewHolder(view)
+        return NewsViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val currentItem = mList[position]
+    @SuppressLint("SetTextI18n")
+    override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
+        val currentItem = differ.currentList[position]
 
-        holder.newTitle.text = currentItem.title
-        holder.newsAuthor.text = currentItem.author
-        //holder.newsImage.setImageResource(currentItem.urlToImage)
-        holder.newsDate.text = currentItem.publishedAt
-
-
-    }
-
-    override fun getItemCount(): Int {
-        return mList.size
-    }
-
-
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
-        val newsImage: ImageView = itemView.findViewById(R.id.newsImage)
-        val newTitle: TextView = itemView.findViewById(R.id.newsTitle)
-        val newsAuthor: TextView = itemView.findViewById(R.id.newsAuthor)
-        val newsDate: TextView = itemView.findViewById(R.id.newsDate)
-
+        holder.itemView.apply {
+            Glide.with(this).load(currentItem.urlToImage).into(holder.binding.newsImage)
+            holder.binding.newsTitle.text = currentItem.title
+            holder.binding.newsAuthor.text = "author : ${currentItem.author}"
+            holder.binding.newsDate.text = "Publish at ${currentItem.publishedAt}"
+        }
 
     }
+
+    override fun getItemCount() = differ.currentList.size
+
 }

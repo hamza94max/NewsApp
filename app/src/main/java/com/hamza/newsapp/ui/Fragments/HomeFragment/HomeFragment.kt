@@ -1,22 +1,28 @@
 package com.hamza.newsapp.ui.Fragments.HomeFragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.hamza.newsapp.data.Model.Article
-import com.hamza.newsapp.data.Model.Source
+import com.hamza.newsapp.data.RemoteData.RetrofitInstance
 import com.hamza.newsapp.databinding.FragmentHomeBinding
+import retrofit2.HttpException
+import java.io.IOException
 
+const val TAG = "Home fragment"
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
-    private var list: ArrayList<Article>? = null
+
+    private lateinit var newsAdapter: HomeAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,58 +33,55 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
 
 
-        list = arrayListOf(
 
-            Article(
-                "author",
-                " content",
-                " des",
-                "publish at ",
-                Source(56, "name"),
-                "title1",
-                "Url",
-                "imageUrl"
-            ),
-            Article(
-                "author",
-                " content",
-                " des",
-                "publish at ",
-                Source(56, "name"),
-                "title2",
-                "Url",
-                "imageUrl"
-            ),
-            Article(
-                "author",
-                " content",
-                " des",
-                "publish at ",
-                Source(56, "name"),
-                "title3",
-                "Url",
-                "imageUrl"
-            ), Article(
-                "author",
-                " content",
-                " des",
-                "publish at ",
-                Source(56, "name"),
-                "hamza title4 ",
-                "Url",
-                "imageUrl"
-            )
-        )
-
-        setUpRecyclerView()
 
 
         return binding.root
     }
 
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        lifecycleScope.launchWhenCreated {
+            binding.ProgressBar.isVisible = true
+            val response = try {
+                RetrofitInstance.api.getTeslaNews()
+            } catch (e: IOException) {
+                Log.i(TAG, " IOException : don't have internet connection")
+                binding.ProgressBar.isVisible = false
+
+                return@launchWhenCreated
+            } catch (e: HttpException) {
+                Log.i(TAG, "HttpException : unexpected response")
+                binding.ProgressBar.isVisible = false
+                return@launchWhenCreated
+            }
+
+            if (response.isSuccessful && response.body() != null) {
+                newsAdapter.differ.submitList(response.body()!!.articles)
+            } else {
+                Log.i(TAG, "Response not successful")
+            }
+
+            binding.ProgressBar.isVisible = false
+
+
+        }
+
+
+        setUpRecyclerView()
+
+
+    }
+
     private fun setUpRecyclerView() {
-        binding.newsRecylcerView.layoutManager = LinearLayoutManager(context)
-        binding.newsRecylcerView.adapter = HomeAdapter(list!!)
+        binding.newsRecylcerView.apply {
+            newsAdapter = HomeAdapter()
+            layoutManager = LinearLayoutManager(context)
+            binding.newsRecylcerView.adapter = newsAdapter
+        }
+
     }
 
 }

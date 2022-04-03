@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/newsCard"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="14dp"
     android:padding="7dp"
     app:cardCornerRadius="7dp">
 
@@ -28,7 +29,7 @@
             android:layout_below="@id/newsImage"
             android:padding="7dp"
             android:textColor="@color/black"
-            android:textSize="21sp"
+            android:textSize="22sp"
             android:textStyle="bold" />
 
         <TextView
@@ -36,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/newsTitle"
-            android:layout_marginTop="7dp"
+            android:layout_marginTop="2dp"
             android:padding="7dp"
             android:textSize="18sp" />
 
@@ -45,7 +46,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/newsAuthor"
-            android:layout_marginTop="7dp"
+            android:layout_marginTop="2dp"
             android:padding="7dp"
             android:textSize="18sp" />
 

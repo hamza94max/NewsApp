@@ -9,7 +9,9 @@ object Versions {
     const val VERSION_CODE = 1
     const val VERSION_NAME = "1.0"
     const val nav_version = "2.4.1"
+    const val Coroutines = "1.3.9"
 
+    const val RETROFIT_LOGGING = "4.5.0"
     const val GLIDE = "4.12.0"
 
 
@@ -17,7 +19,7 @@ object Versions {
     val RX_ANDROID = "2.1.1"
     val GSON_VERSION = "2.8.7"
     const val LIFE_CYCLE_VERSION = "2.2.0"
-    val CONSTRAINT_LAYOUT = "2.1.3"
+    const val CONSTRAINT_LAYOUT = "2.1.3"
     const val ANDROID_GRADLE_VERSION = "7.0.4"
     val APP_COMPAT_VERSION = "1.4.1"
     val CORE_KTX = "1.7.0"
@@ -74,8 +76,8 @@ object Libs {
     val navigationComponentUi = "androidx.navigation:navigation-ui-ktx:$nav_version"
     val constraintLayout =
         "androidx.constraintlayout:constraintlayout:${Versions.CONSTRAINT_LAYOUT}"
-    val liveData = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.LIFE_CYCLE_VERSION}"
-    val viewModel = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.LIFE_CYCLE_VERSION}"
+    val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.LIFE_CYCLE_VERSION}"
+    val liveData = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.LIFE_CYCLE_VERSION}"
     val appCompat = "androidx.appcompat:appcompat:${Versions.APP_COMPAT_VERSION}"
     val coreExt = "androidx.core:core-ktx:${Versions.CORE_KTX}"
     val multidex = "com.android.support:multidex:${Versions.MULTIDEX}"
@@ -84,8 +86,16 @@ object Libs {
     val fragmentKtx = "androidx.fragment:fragment-ktx:${Versions.FRAGMENT_KTX}"
 
     val retrofit = "com.squareup.retrofit2:retrofit:${Versions.RETROFIT_VERSION}"
+    val gsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.GSON_CONVERTER}"
+    const val retrofitLogging =
+        "com.squareup.okhttp3:logging-interceptor:${Versions.RETROFIT_LOGGING}"
+
+
     val retrofitCoroutinesAdapter =
         "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${Versions.RETROFIT_COROUTINES_ADAPTER}"
+
+
+    const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.Coroutines}"
 
     val glide = "com.github.bumptech.glide:glide:${Versions.GLIDE}"
     val kaptGlide = "com.github.bumptech.glide:compiler:${Versions.GLIDE}"
@@ -94,7 +104,6 @@ object Libs {
     val rxAdapter = "com.squareup.retrofit2:adapter-rxjava2:${Versions.RX_RETROFIT_ADAPTER}"
     val loggingInterceptor =
         "com.squareup.okhttp3:logging-interceptor:${Versions.OKHTTP_LOGGING_INTERCEPTOR_VERSION}"
-    val gsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.GSON_CONVERTER}"
     val googleMap = "com.google.android.gms:play-services-maps:${Versions.GOOGLE_MAP}"
     val locationServices =
         "com.google.android.gms:play-services-location:${Versions.LOCATION_SERVICES}"
