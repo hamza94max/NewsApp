@@ -1,5 +1,7 @@
 package com.hamza.newsapp.data.Model
 
+import java.io.Serializable
+
 data class NewsResponse(
     val articles: List<Article>,
     val status: String,
@@ -15,7 +17,7 @@ data class Article(
     val title: String,
     val url: String,
     val urlToImage: String
-)
+) : Serializable
 
 data class Source(
     val id: Any,

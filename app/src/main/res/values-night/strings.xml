@@ -3,4 +3,5 @@
     <string name="favourite">Favourite</string>
     <string name="nav_close">Close</string>
     <string name="newsimage">newsImage</string>
+    <string name="imageofarticle">imageOfArticle</string>
 </resources>

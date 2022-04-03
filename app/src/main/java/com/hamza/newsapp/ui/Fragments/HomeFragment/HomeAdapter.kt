@@ -35,6 +35,9 @@ class HomeAdapter() : RecyclerView.Adapter<HomeAdapter.NewsViewHolder>() {
         return NewsViewHolder(view)
     }
 
+    private var onItemClickListener: ((Article) -> Unit)? = null
+
+
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
         val currentItem = differ.currentList[position]
@@ -42,10 +45,19 @@ class HomeAdapter() : RecyclerView.Adapter<HomeAdapter.NewsViewHolder>() {
         holder.itemView.apply {
             Glide.with(this).load(currentItem.urlToImage).into(holder.binding.newsImage)
             holder.binding.newsTitle.text = currentItem.title
-            holder.binding.newsAuthor.text = "author : ${currentItem.author}"
+            holder.binding.newsAuthor.text = "By : ${currentItem.author}"
             holder.binding.newsDate.text = "Publish at ${currentItem.publishedAt}"
+
+            setOnClickListener {
+                onItemClickListener?.let { it(currentItem) }
+            }
+
         }
 
+    }
+
+    fun setOnItemClickListener(listener: (Article) -> Unit) {
+        onItemClickListener = listener
     }
 
     override fun getItemCount() = differ.currentList.size
