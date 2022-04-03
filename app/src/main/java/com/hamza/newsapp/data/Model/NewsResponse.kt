@@ -5,6 +5,7 @@ data class NewsResponse(
     val status: String,
 )
 
+
 data class Article(
     val author: String,
     val content: String,

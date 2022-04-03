@@ -15,6 +15,7 @@ android {
         targetSdk Android.targetSDK
         versionCode Android.versionCode
         versionName Android.versionName
+        buildConfigField("String", "API_KEY", API_KEY)
 
         multiDexEnabled true
 
@@ -66,6 +67,9 @@ dependencies {
     implementation Libs.retrofit
     implementation Libs.retrofitCoroutinesAdapter
     implementation Libs.gsonConverter
+    implementation Libs.retrofitLogging
+
+    implementation Libs.coroutines
 
 
     // Glide
