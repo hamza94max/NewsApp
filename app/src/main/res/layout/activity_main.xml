@@ -8,8 +8,8 @@
     tools:context=".ui.MainActivity.MainActivity">
 
     <!--suppress CheckTagEmptyBody -->
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragment"
+    <fragment
+        android:id="@+id/host_fragment"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,6 +18,7 @@
 
 
     <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"

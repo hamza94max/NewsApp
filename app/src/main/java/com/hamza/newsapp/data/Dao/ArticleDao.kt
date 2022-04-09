@@ -17,7 +17,7 @@ interface ArticleDao {
     suspend fun deleteArticle(article: Article)
 
     @Query("SELECT * FROM Articles")
-    fun getAllArticles(): LiveData<Article>
+    fun getAllArticles(): LiveData<List<Article?>>?
 
 
 }
