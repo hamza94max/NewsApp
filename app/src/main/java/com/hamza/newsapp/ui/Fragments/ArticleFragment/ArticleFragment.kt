@@ -1,18 +1,24 @@
 package com.hamza.newsapp.ui.Fragments.ArticleFragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebViewClient
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.hamza.newsapp.databinding.FragmentArticleBinding
+import com.hamza.newsapp.ui.Fragments.FaouriteFragment.FavouriteArticlesViewModel
 
 class ArticleFragment : Fragment() {
 
     private var _binding: FragmentArticleBinding? = null
     private val binding get() = _binding!!
+
+    val favArticleViewModel by viewModels<FavouriteArticlesViewModel>()
 
     private val args: ArticleFragmentArgs by navArgs()
 
@@ -42,6 +48,12 @@ class ArticleFragment : Fragment() {
                 loadUrl(article.url)
             }
 
+        }
+
+        binding.fab.setOnClickListener {
+            favArticleViewModel.insertArticle(article)
+            Toast.makeText(context, "Inserted ", Toast.LENGTH_SHORT).show()
+            Log.i("Teg ", "inserted")
         }
 
     }

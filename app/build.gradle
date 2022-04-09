@@ -21,7 +21,10 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    configurations {
+        cleanedAnnotations
+        compile.exclude group: 'org.jetbrains' , module:'annotations'
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -56,12 +59,17 @@ dependencies {
     implementation Libs.navigationComponentUi
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
+    // Room Database
+    implementation Libs.roomRunTime
+    kapt  Libs.kaptRoom
+    implementation Libs.roomKtx
+    kapt "android.arch.persistence.room:compiler:1.1.1"
 
-    // viewModel
+
+
+    // Lifecycle
     implementation Libs.viewModel
     implementation Libs.liveData
-
-
 
     // Retrofit
     implementation Libs.retrofit
@@ -75,9 +83,6 @@ dependencies {
     // Glide
     implementation Libs.glide
     kapt Libs.kaptGlide
-
-
-
 
     //noinspection GradleDynamicVersion
     testImplementation TestLibs.junit
