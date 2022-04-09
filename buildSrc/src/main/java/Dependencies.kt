@@ -13,6 +13,7 @@ object Versions {
 
     const val RETROFIT_LOGGING = "4.5.0"
     const val GLIDE = "4.12.0"
+    const val ROOM = "2.4.2"
 
 
     val RXJAVA_VERSION = "2.2.13"
@@ -81,6 +82,12 @@ object Libs {
     val appCompat = "androidx.appcompat:appcompat:${Versions.APP_COMPAT_VERSION}"
     val coreExt = "androidx.core:core-ktx:${Versions.CORE_KTX}"
     val multidex = "com.android.support:multidex:${Versions.MULTIDEX}"
+
+
+    val roomRunTime = "androidx.room:room-runtime:${Versions.ROOM}"
+    val kaptRoom = "androidx.room:room-compiler:${Versions.ROOM}"
+    val roomKtx = "androidx.room:room-ktx:${Versions.ROOM}"
+
     val hiltAndroid = "com.google.dagger:hilt-android:${Versions.HILT}"
     val hiltAndroidCompiler = "com.google.dagger:hilt-compiler:${Versions.HILT}"
     val fragmentKtx = "androidx.fragment:fragment-ktx:${Versions.FRAGMENT_KTX}"

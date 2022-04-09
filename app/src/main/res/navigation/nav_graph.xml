@@ -18,6 +18,13 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_homeFragment_to_favArticlesFragment"
+            app:destination="@id/favArticlesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
 
@@ -31,6 +38,12 @@
             android:name="article"
             app:argType="com.hamza.newsapp.data.Model.Article" />
     </fragment>
+
+    <fragment
+        android:id="@+id/favArticlesFragment"
+        android:name="com.hamza.newsapp.ui.Fragments.FaouriteFragment.FavArticlesFragment"
+        android:label="fragment_fav_articles"
+        tools:layout="@layout/fragment_fav_articles" />
 
 
 </navigation>
