@@ -84,8 +84,17 @@ dependencies {
     implementation Libs.glide
     kapt Libs.kaptGlide
 
+    // Testing
+
     //noinspection GradleDynamicVersion
     testImplementation TestLibs.junit
     androidTestImplementation TestLibs.junitExt
     androidTestImplementation TestLibs.espresso
+
+    androidTestImplementation TestLibs.dexmaker
+    androidTestImplementation TestLibs.truthLib
+    androidTestImplementation TestLibs.coreTesting
+    androidTestImplementation TestLibs.TestCoroutines
+    androidTestImplementation TestLibs.mockito
+
 }

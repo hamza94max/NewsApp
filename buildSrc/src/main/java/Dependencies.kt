@@ -16,6 +16,13 @@ object Versions {
     const val ROOM = "2.4.2"
 
 
+    // Testing Room Database
+    const val dexMaker = "2.28.1"
+    const val TestCorotines = "1.2.1"
+    const val coreTesting = "2.1.0"
+    const val truth = "1.1.3"
+
+
     val RXJAVA_VERSION = "2.2.13"
     val RX_ANDROID = "2.1.1"
     val GSON_VERSION = "2.8.7"
@@ -111,9 +118,7 @@ object Libs {
     val rxAdapter = "com.squareup.retrofit2:adapter-rxjava2:${Versions.RX_RETROFIT_ADAPTER}"
     val loggingInterceptor =
         "com.squareup.okhttp3:logging-interceptor:${Versions.OKHTTP_LOGGING_INTERCEPTOR_VERSION}"
-    val googleMap = "com.google.android.gms:play-services-maps:${Versions.GOOGLE_MAP}"
-    val locationServices =
-        "com.google.android.gms:play-services-location:${Versions.LOCATION_SERVICES}"
+
     val timber = "com.jakewharton.timber:timber:${Versions.TIMBER}"
     val permissionsDispatcher =
         "com.github.permissions-dispatcher:permissionsdispatcher:${Versions.PERMISSION_DISPATCHER}"
@@ -122,7 +127,7 @@ object Libs {
 }
 
 object TestLibs {
-    const val junit = "junit:junit:4.+"
+    val junit = "junit:junit:4.+"
     val espresso = "androidx.test.espresso:espresso-core:${Versions.ESPRESSO}"
     val archCoreTesting = "androidx.arch.core:core-testing:${Versions.ARCH_CORE_TESTING_VER}"
     val testRunner = "androidx.test:runner:${Versions.TEST_RUNNER_VER}"
@@ -131,6 +136,13 @@ object TestLibs {
     val junitExt = "androidx.test.ext:junit:${Versions.JUNIT_EXT_VER}"
     val mockito = "org.mockito:mockito-core:${Versions.MOCKITO}"
     val mockitoAndroid = "org.mockito:mockito-android:${Versions.MOCKITO}"
+
+    // + for Room dataBase
+    val dexmaker = "com.linkedin.dexmaker:dexmaker-mockito:${Versions.dexMaker}"
+
+    val TestCoroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.TestCorotines}"
+    val coreTesting = "androidx.arch.core:core-testing:${Versions.coreTesting}"
+    val truthLib = "com.google.truth:truth:${Versions.truth}"
 
     // For instrumentation tests
     val hiltAndroidTest = "com.google.dagger:hilt-android-testing:${Versions.HILT}"
