@@ -1,8 +1,10 @@
 package com.hamza.newsapp.ui.Fragments.FaouriteFragment
 
 import android.annotation.SuppressLint
+import android.os.Build
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
@@ -10,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.hamza.newsapp.data.Model.Article
 import com.hamza.newsapp.databinding.NewsItemBinding
+import com.hamza.newsapp.util.Util.dateFormat
 
 class FavArticlesAdapter() : RecyclerView.Adapter<FavArticlesAdapter.NewsViewHolder>() {
 
@@ -38,6 +41,7 @@ class FavArticlesAdapter() : RecyclerView.Adapter<FavArticlesAdapter.NewsViewHol
     private var onItemClickListener: ((Article) -> Unit)? = null
 
 
+    @RequiresApi(Build.VERSION_CODES.N)
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
         val currentItem = differ.currentList[position]
@@ -46,7 +50,7 @@ class FavArticlesAdapter() : RecyclerView.Adapter<FavArticlesAdapter.NewsViewHol
             Glide.with(this).load(currentItem.urlToImage).into(holder.binding.newsImage)
             holder.binding.newsTitle.text = currentItem.title
             holder.binding.newsAuthor.text = "By : ${currentItem.author}"
-            holder.binding.newsDate.text = "Publish at ${currentItem.publishedAt}"
+            holder.binding.newsDate.text = "Publish at ${dateFormat(currentItem.publishedAt)}"
 
             setOnClickListener {
                 onItemClickListener?.let { it(currentItem) }
