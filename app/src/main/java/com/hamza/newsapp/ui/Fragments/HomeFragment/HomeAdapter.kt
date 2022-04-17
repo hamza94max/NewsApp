@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.hamza.newsapp.data.Model.Article
 import com.hamza.newsapp.databinding.NewsItemBinding
+import com.hamza.newsapp.util.Util.dateFormat
 
 class HomeAdapter() : RecyclerView.Adapter<HomeAdapter.NewsViewHolder>() {
 
@@ -46,7 +47,7 @@ class HomeAdapter() : RecyclerView.Adapter<HomeAdapter.NewsViewHolder>() {
             Glide.with(this).load(currentItem.urlToImage).into(holder.binding.newsImage)
             holder.binding.newsTitle.text = currentItem.title
             holder.binding.newsAuthor.text = "By : ${currentItem.author}"
-            holder.binding.newsDate.text = "Publish at ${currentItem.publishedAt}"
+            holder.binding.newsDate.text = "Publish at ${dateFormat(currentItem.publishedAt)}"
 
             setOnClickListener {
                 onItemClickListener?.let { it(currentItem) }
