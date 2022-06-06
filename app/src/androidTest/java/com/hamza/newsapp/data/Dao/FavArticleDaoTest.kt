@@ -6,7 +6,7 @@ import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.SmallTest
 import com.google.common.truth.Truth.assertThat
-import com.hamza.newsapp.data.DataBase.ArticleDataBase
+import com.hamza.newsapp.data.DataBase.FavArticlesDataBase
 import com.hamza.newsapp.data.Model.Article
 import com.hamza.newsapp.getOrAwaitValue
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -20,20 +20,20 @@ import org.junit.runner.RunWith
 @ExperimentalCoroutinesApi
 @RunWith(AndroidJUnit4::class)
 @SmallTest
-class ArticleDaoTest {
+class FavArticleDaoTest {
 
     @get:Rule
     var instantTaskExecutorRule = InstantTaskExecutorRule()
 
-    private lateinit var database: ArticleDataBase
-    private lateinit var dao: ArticleDao
+    private lateinit var database: FavArticlesDataBase
+    private lateinit var dao: FavArticleDao
 
 
     @Before
     fun setup() {
         database = Room.inMemoryDatabaseBuilder(
             ApplicationProvider.getApplicationContext(),
-            ArticleDataBase::class.java
+            FavArticlesDataBase::class.java
         ).allowMainThreadQueries().build()
 
 

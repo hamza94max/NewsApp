@@ -7,6 +7,25 @@
     tools:context=".ui.Fragments.FaouriteFragment.FavArticlesFragment">
 
 
+    <RelativeLayout
+        android:id="@+id/notFoundlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:padding="7dp"
+            android:text="Favourite Articles are empty !"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+
+
+    </RelativeLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/favRecyclerView"
         android:layout_width="match_parent"
@@ -23,4 +42,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,14 +1,14 @@
 package com.hamza.newsapp.data.Repository
 
 import android.app.Application
-import com.hamza.newsapp.data.Dao.ArticleDao
-import com.hamza.newsapp.data.DataBase.ArticleDataBase.Companion.invoke
+import com.hamza.newsapp.data.Dao.FavArticleDao
+import com.hamza.newsapp.data.DataBase.FavArticlesDataBase.Companion.invoke
 import com.hamza.newsapp.data.Model.Article
 
-class ArticleRepository(application: Application?) {
+class FavArticlesRepository(application: Application?) {
 
 
-    private val dao: ArticleDao by lazy {
+    private val dao: FavArticleDao by lazy {
         val database = invoke(application!!)
         database.getArticleDao()
     }
@@ -18,6 +18,10 @@ class ArticleRepository(application: Application?) {
 
     suspend fun insert(article: Article) {
         dao.insertArticle(article)
+    }
+
+    suspend fun deleteAllFavArticles() {
+        dao.deleteAllFavArticles()
     }
 
 
