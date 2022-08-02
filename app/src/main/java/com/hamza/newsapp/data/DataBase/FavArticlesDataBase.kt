@@ -30,8 +30,6 @@ abstract class FavArticlesDataBase : RoomDatabase() {
             )
                 .fallbackToDestructiveMigration()
                 .allowMainThreadQueries()
-
-
                 .build()
 
     }

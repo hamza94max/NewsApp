@@ -1,4 +1,4 @@
-package com.hamza.newsapp.ui.Fragments.ArticleFragment
+package com.hamza.newsapp.ui.Fragments.ArticleDetailsFragment
 
 import android.os.Bundle
 import android.util.Log
@@ -13,14 +13,14 @@ import androidx.navigation.fragment.navArgs
 import com.hamza.newsapp.databinding.FragmentArticleBinding
 import com.hamza.newsapp.ui.Fragments.FaouriteFragment.FavouriteArticlesViewModel
 
-class ArticleFragment : Fragment() {
+class ArticleDetailsFragment : Fragment() {
 
     private var _binding: FragmentArticleBinding? = null
     private val binding get() = _binding!!
 
-    val favArticleViewModel by viewModels<FavouriteArticlesViewModel>()
+    private val favArticleViewModel by viewModels<FavouriteArticlesViewModel>()
 
-    private val args: ArticleFragmentArgs by navArgs()
+    private val args: ArticleDetailsFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

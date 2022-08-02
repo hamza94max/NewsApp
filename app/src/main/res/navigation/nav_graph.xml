@@ -30,7 +30,7 @@
 
     <fragment
         android:id="@+id/articleFragment"
-        android:name="com.hamza.newsapp.ui.Fragments.ArticleFragment.ArticleFragment"
+        android:name="com.hamza.newsapp.ui.Fragments.ArticleDetailsFragment.ArticleDetailsFragment"
         android:label="fragment_article"
         tools:layout="@layout/fragment_article">
 

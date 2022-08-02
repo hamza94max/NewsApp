@@ -3,26 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.Fragments.FaouriteFragment.FavArticlesFragment">
-
 
     <RelativeLayout
         android:id="@+id/notFoundlayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone">
-
+        android:visibility="visible">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:padding="7dp"
-            android:text="Favourite Articles are empty !"
+            android:gravity="center"
+            android:text="@string/empty"
             android:textColor="@color/black"
             android:textSize="25sp" />
-
 
     </RelativeLayout>
 
@@ -32,16 +29,5 @@
         android:layout_height="match_parent"
         android:padding="7dp"
         tools:listitem="@layout/news_item" />
-
-    <ProgressBar
-        android:id="@+id/ProgressBar_wishList"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

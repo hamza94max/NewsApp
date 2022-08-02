@@ -2,7 +2,6 @@ package com.hamza.newsapp.data.Model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 data class NewsResponse(
@@ -22,8 +21,6 @@ data class Article(
     val url: String,
     val urlToImage: String,
 
-    @SerializedName("isFav")
-    var isFav: Int = 0
 ) : Serializable
 
 data class Source(

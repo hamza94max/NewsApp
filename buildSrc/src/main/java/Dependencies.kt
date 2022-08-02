@@ -1,26 +1,31 @@
 import Versions.nav_version
+import Versions.paging_version
 
 object Versions {
 
     const val KOTLIN = "1.6.10"
-    const val COMPILE_SDK = 31
-    const val MIN_SDK_VERSION = 16
-    const val TARGET_SDK_VERSION = 31
+    const val COMPILE_SDK = 32
+    const val MIN_SDK_VERSION = 21
+    const val TARGET_SDK_VERSION = 32
     const val VERSION_CODE = 1
     const val VERSION_NAME = "1.0"
-    const val nav_version = "2.4.1"
+    const val nav_version = "2.5.1"
     const val Coroutines = "1.3.9"
 
     const val RETROFIT_LOGGING = "4.5.0"
     const val GLIDE = "4.12.0"
     const val ROOM = "2.4.2"
 
+    const val Skeleton = "4.0.0"
 
     // Testing Room Database
     const val dexMaker = "2.28.1"
     const val TestCorotines = "1.2.1"
     const val coreTesting = "2.1.0"
     const val truth = "1.1.3"
+
+    // paging
+    const val paging_version = "3.1.1"
 
 
     val RXJAVA_VERSION = "2.2.13"
@@ -82,7 +87,7 @@ object Libs {
     val gson = "com.google.code.gson:gson:${Versions.GSON_VERSION}"
     val navigationComponentFragments = "androidx.navigation:navigation-fragment-ktx:$nav_version"
     val navigationComponentUi = "androidx.navigation:navigation-ui-ktx:$nav_version"
-    val constraintLayout =
+    const val constraintLayout =
         "androidx.constraintlayout:constraintlayout:${Versions.CONSTRAINT_LAYOUT}"
     val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.LIFE_CYCLE_VERSION}"
     val liveData = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.LIFE_CYCLE_VERSION}"
@@ -110,6 +115,10 @@ object Libs {
 
 
     const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.Coroutines}"
+
+    const val Skeleton = "com.faltenreich:skeletonlayout:${Versions.Skeleton}"
+
+    const val paging = "androidx.paging:paging-runtime:$paging_version"
 
     val glide = "com.github.bumptech.glide:glide:${Versions.GLIDE}"
     val kaptGlide = "com.github.bumptech.glide:compiler:${Versions.GLIDE}"
