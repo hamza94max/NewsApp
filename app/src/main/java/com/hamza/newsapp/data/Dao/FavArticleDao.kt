@@ -5,7 +5,7 @@ import androidx.room.*
 import com.hamza.newsapp.data.Model.Article
 
 @Dao
-interface ArticleDao {
+interface FavArticleDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertArticle(article: Article)
@@ -18,6 +18,9 @@ interface ArticleDao {
 
     @Query("SELECT * FROM Articles")
     fun getAllArticles(): LiveData<List<Article?>>?
+
+    @Query("DELETE FROM Articles")
+    suspend fun deleteAllFavArticles()
 
 
 }

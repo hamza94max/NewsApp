@@ -1,8 +1,10 @@
 package com.hamza.newsapp.ui.Fragments.HomeFragment
 
 import android.annotation.SuppressLint
+import android.os.Build
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
@@ -39,6 +41,7 @@ class HomeAdapter() : RecyclerView.Adapter<HomeAdapter.NewsViewHolder>() {
     private var onItemClickListener: ((Article) -> Unit)? = null
 
 
+    @RequiresApi(Build.VERSION_CODES.N)
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
         val currentItem = differ.currentList[position]
