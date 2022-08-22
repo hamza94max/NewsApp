@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id "androidx.navigation.safeargs.kotlin"
     id 'kotlin-kapt'
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -55,6 +56,10 @@ dependencies {
     // splash
     implementation 'androidx.core:core-splashscreen:1.0.0'
 
+
+    // hilt
+    implementation Libs.hiltAndroid
+    implementation Libs.hiltAndroidCompiler
 
 
     // Navigation component

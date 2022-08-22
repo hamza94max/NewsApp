@@ -40,6 +40,7 @@ The following diagram shows all the modules and how each module interact with on
 
 # Languages and Tools 
 * [Kotlin](https://kotlinlang.org/) - official programming language for Android development .
+* [Hilt](https://developer.android.com/training/dependency-injection/hilt-android) - dependency injection library .
 * [Coroutines](https://kotlinlang.org/docs/reference/coroutines-overview.html) - for asynchronous programming .
 * [Android Architecture Components](https://developer.android.com/topic/libraries/architecture) - Collection of libraries that help you design robust, testable, and maintainable apps.
   - [LiveData](https://developer.android.com/topic/libraries/architecture/livedata) - Data objects that notify views when the underlying database changes.
@@ -50,6 +51,7 @@ The following diagram shows all the modules and how each module interact with on
 * [Fragment](https://developer.android.com/guide/components/fragments)
 * [Glide](https://bumptech.github.io/glide/) for image loading
 * [pretty time ](https://www.ocpsoft.org/prettytime/) - format time 
+* [Unit Testing](https://developer.android.com/training/testing/local-tests) - Build local unit tests.
 
 
 

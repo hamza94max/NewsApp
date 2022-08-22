@@ -43,7 +43,7 @@ class FavArticleDaoTest {
     @Test
     fun insertArticle() = runBlockingTest {
         val article = Article(
-            16, "author", "content", "des", "at ", "title", "url", "toimg", 5
+            16, "author", "content", "des", "at ", "title", "url", "toimg"
         )
 
         dao.insertArticle(article)

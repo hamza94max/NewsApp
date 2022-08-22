@@ -12,7 +12,9 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.hamza.newsapp.databinding.FragmentArticleBinding
 import com.hamza.newsapp.ui.Fragments.FaouriteFragment.FavouriteArticlesViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ArticleDetailsFragment : Fragment() {
 
     private var _binding: FragmentArticleBinding? = null
@@ -29,11 +31,8 @@ class ArticleDetailsFragment : Fragment() {
 
         _binding = FragmentArticleBinding.inflate(layoutInflater, container, false)
 
-
-
         return binding.root
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -42,12 +41,10 @@ class ArticleDetailsFragment : Fragment() {
 
         binding.webView.apply {
 
-
             if (article.url.isNotEmpty()) {
                 webViewClient = WebViewClient()
                 loadUrl(article.url)
             }
-
         }
 
         binding.fab.setOnClickListener {

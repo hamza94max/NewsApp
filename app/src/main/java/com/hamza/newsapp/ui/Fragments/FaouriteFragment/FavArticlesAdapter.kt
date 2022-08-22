@@ -5,16 +5,17 @@ import android.os.Build
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
-
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.hamza.newsapp.data.Model.Article
 import com.hamza.newsapp.databinding.NewsItemBinding
 import com.hamza.newsapp.util.Util.dateFormat
+import com.hamza.newsapp.util.loadImage
+import javax.inject.Inject
 
-class FavArticlesAdapter() : RecyclerView.Adapter<FavArticlesAdapter.NewsViewHolder>() {
+class FavArticlesAdapter @Inject constructor() :
+    RecyclerView.Adapter<FavArticlesAdapter.NewsViewHolder>() {
 
     inner class NewsViewHolder(val binding: NewsItemBinding) : RecyclerView.ViewHolder(binding.root)
 
@@ -47,7 +48,7 @@ class FavArticlesAdapter() : RecyclerView.Adapter<FavArticlesAdapter.NewsViewHol
         val currentItem = differ.currentList[position]
 
         holder.itemView.apply {
-            Glide.with(this).load(currentItem.urlToImage).into(holder.binding.newsImage)
+            holder.binding.newsImage.loadImage(currentItem.urlToImage)
             holder.binding.newsTitle.text = currentItem.title
             holder.binding.newsAuthor.text = "By : ${currentItem.author}"
             holder.binding.newsDate.text = "Publish at ${dateFormat(currentItem.publishedAt)}"
