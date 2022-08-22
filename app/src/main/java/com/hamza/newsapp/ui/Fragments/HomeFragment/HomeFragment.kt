@@ -13,10 +13,12 @@ import com.faltenreich.skeletonlayout.Skeleton
 import com.hamza.newsapp.R
 import com.hamza.newsapp.data.RemoteData.RetrofitInstance
 import com.hamza.newsapp.databinding.FragmentHomeBinding
+import dagger.hilt.android.AndroidEntryPoint
 import retrofit2.HttpException
 import java.io.IOException
+import javax.inject.Inject
 
-
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
 
     private val TAG = "HomeFragment"
@@ -24,7 +26,9 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var newsAdapter: HomeAdapter
+    @Inject
+    lateinit var newsAdapter: HomeAdapter
+
     private lateinit var skeleton: Skeleton
 
     override fun onCreateView(
@@ -88,7 +92,6 @@ class HomeFragment : Fragment() {
 
     private fun setUpRecyclerView() {
         binding.newsRecylcerView.apply {
-            newsAdapter = HomeAdapter()
             layoutManager = LinearLayoutManager(context)
             binding.newsRecylcerView.adapter = newsAdapter
         }

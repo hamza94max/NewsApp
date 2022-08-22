@@ -45,7 +45,7 @@ object Versions {
     val MOCKITO = "3.11.2"
     val MULTIDEX = "2.0.1"
     val JACOCO = "0.16.0"
-    val HILT = "2.37"
+    const val HILT = "2.38.1"
     val FRAGMENT_KTX = "1.2.5"
 
     val RX_RETROFIT_ADAPTER = "2.6.1"

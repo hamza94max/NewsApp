@@ -13,8 +13,9 @@ import com.bumptech.glide.Glide
 import com.hamza.newsapp.data.Model.Article
 import com.hamza.newsapp.databinding.NewsItemBinding
 import com.hamza.newsapp.util.Util.dateFormat
+import javax.inject.Inject
 
-class HomeAdapter() : RecyclerView.Adapter<HomeAdapter.NewsViewHolder>() {
+class HomeAdapter @Inject constructor() : RecyclerView.Adapter<HomeAdapter.NewsViewHolder>() {
 
     inner class NewsViewHolder(val binding: NewsItemBinding) : RecyclerView.ViewHolder(binding.root)
 

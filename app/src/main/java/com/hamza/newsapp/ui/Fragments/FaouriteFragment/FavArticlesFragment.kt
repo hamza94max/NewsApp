@@ -9,8 +9,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.hamza.newsapp.R
 import com.hamza.newsapp.data.Model.Article
 import com.hamza.newsapp.databinding.FragmentFavArticlesBinding
+import com.hamza.newsapp.util.show
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
-
+@AndroidEntryPoint
 class FavArticlesFragment : Fragment() {
 
     private var _binding: FragmentFavArticlesBinding? = null
@@ -19,7 +22,8 @@ class FavArticlesFragment : Fragment() {
     private val viewModel: FavouriteArticlesViewModel by viewModels()
     private lateinit var favList: MutableList<Article>
 
-    private lateinit var favAdapter: FavArticlesAdapter
+    @Inject
+    lateinit var favAdapter: FavArticlesAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,14 +51,12 @@ class FavArticlesFragment : Fragment() {
         }
 
         if (viewModel.getFavNews()?.value == null)
-            binding.notFoundlayout.visibility = View.VISIBLE
+            binding.notFoundlayout.show()
 
     }
 
-
     private fun setUpRecyclerView() {
         binding.favRecyclerView.apply {
-            favAdapter = FavArticlesAdapter()
             layoutManager = LinearLayoutManager(context)
             binding.favRecyclerView.adapter = favAdapter
         }
