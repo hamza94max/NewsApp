@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:id="@+id/skeleton"
     android:layout_height="wrap_content"
-    tools:context=".ui.Fragments.HomeFragment.HomeFragment">
+    tools:context=".ui.HomeFragment.HomeFragment">
 
 
     <androidx.recyclerview.widget.RecyclerView

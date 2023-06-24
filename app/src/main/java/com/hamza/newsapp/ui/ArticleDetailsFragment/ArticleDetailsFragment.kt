@@ -1,7 +1,6 @@
-package com.hamza.newsapp.ui.Fragments.ArticleDetailsFragment
+package com.hamza.newsapp.ui.ArticleDetailsFragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.hamza.newsapp.databinding.FragmentArticleBinding
-import com.hamza.newsapp.ui.Fragments.FaouriteFragment.FavouriteArticlesViewModel
+import com.hamza.newsapp.ui.FavouriteFragment.FavouriteArticlesViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -49,8 +48,7 @@ class ArticleDetailsFragment : Fragment() {
 
         binding.fab.setOnClickListener {
             favArticleViewModel.insertArticle(article)
-            Toast.makeText(context, "Inserted ", Toast.LENGTH_SHORT).show()
-            Log.i("Teg ", "inserted")
+            Toast.makeText(context, "Added to Favourites ", Toast.LENGTH_SHORT).show()
         }
 
     }

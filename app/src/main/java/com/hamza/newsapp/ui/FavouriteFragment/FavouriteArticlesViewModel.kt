@@ -1,4 +1,4 @@
-package com.hamza.newsapp.ui.Fragments.FaouriteFragment
+package com.hamza.newsapp.ui.FavouriteFragment
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

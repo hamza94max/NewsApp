@@ -1,4 +1,4 @@
-package com.hamza.newsapp.ui.Fragments.HomeFragment
+package com.hamza.newsapp.ui.HomeFragment
 
 import android.os.Bundle
 import android.util.Log

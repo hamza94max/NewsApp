@@ -7,8 +7,8 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.hamza.newsapp.ui.Fragments.HomeFragment.HomeFragment"
-        android:label="fragment_home"
+        android:name="com.hamza.newsapp.ui.HomeFragment.HomeFragment"
+        android:label="Home"
         tools:layout="@layout/fragment_home">
 
         <action
@@ -30,8 +30,8 @@
 
     <fragment
         android:id="@+id/articleFragment"
-        android:name="com.hamza.newsapp.ui.Fragments.ArticleDetailsFragment.ArticleDetailsFragment"
-        android:label="fragment_article"
+        android:name="com.hamza.newsapp.ui.ArticleDetailsFragment.ArticleDetailsFragment"
+        android:label="Article"
         tools:layout="@layout/fragment_article">
 
         <argument
@@ -41,9 +41,19 @@
 
     <fragment
         android:id="@+id/favArticlesFragment"
-        android:name="com.hamza.newsapp.ui.Fragments.FaouriteFragment.FavArticlesFragment"
-        android:label="fragment_fav_articles"
-        tools:layout="@layout/fragment_fav_articles" />
+        android:name="com.hamza.newsapp.ui.FavouriteFragment.FavArticlesFragment"
+        android:label="Favourites"
+        tools:layout="@layout/fragment_fav_articles">
+
+        <action
+            android:id="@+id/action_favArticlesFragment_to_articleFragment"
+            app:destination="@id/articleFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
 
 
 </navigation>

@@ -1,10 +1,11 @@
-package com.hamza.newsapp.ui.Fragments.FaouriteFragment
+package com.hamza.newsapp.ui.FavouriteFragment
 
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hamza.newsapp.R
 import com.hamza.newsapp.data.Model.Article
@@ -42,6 +43,18 @@ class FavArticlesFragment : Fragment() {
         favList = mutableListOf()
         setUpRecyclerView()
         observeToFavLiveData()
+
+
+        favAdapter.setOnItemClickListener {
+            val bundle = Bundle().apply {
+                putSerializable("article", it)
+            }
+
+            findNavController().navigate(
+                R.id.action_favArticlesFragment_to_articleFragment,
+                bundle
+            )
+        }
     }
 
     private fun observeToFavLiveData() {

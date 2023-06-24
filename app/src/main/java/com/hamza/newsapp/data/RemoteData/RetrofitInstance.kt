@@ -1,6 +1,6 @@
 package com.hamza.newsapp.data.RemoteData
 
-import com.hamza.newsapp.util.Contants.BASE_URL
+import com.hamza.newsapp.util.Constants.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
